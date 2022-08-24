@@ -48,33 +48,31 @@ export default class Component {
     return;
   }
 
-  checkNeedRender(newState) {
-    let needRender = false;
-    const updateStateKey = Object.keys(newState);
+  checkNeedUpdateState(newState) {
+    if (!this.state) return false;
 
-    updateStateKey.map(key => {
-      if (!this.state) return false;
+    let needUpdateState = false;
+    const newStateKeys = Object.keys(newState);
 
+    for (const key of newStateKeys) {
       if (
         !(
           JSON.stringify(this.state[key]) ===
           JSON.stringify(newState[key])
         )
       ) {
-        needRender = true;
+        needUpdateState = true
+        return needUpdateState;
       }
-    });
+    }
 
-    return needRender;
+    return needUpdateState;
   }
 
   setState(newState, childUpdate = false) {
-    const needRender = this.checkNeedRender(newState);
-    if (!needRender) return;
+    if (!this.checkNeedUpdateState(newState)) return;
 
-    const newObj = Object.assign({}, this.state, newState);
-    this.state = newObj;
-
+    this.state = {...this.state, ...newState}
     childUpdate ? this.childUpdate() : this.render();
   }
 }
@@ -92,10 +90,9 @@ export default class Component {
 - `setup()`: 컴포넌트가 첫 생성 될 때 실행됩니다.
 - `template()`: target에 삽입할 template을 작성합니다.
 - `mounted()`: 돔 생성 이후의 로직을 실행합니다.
-- `render()`: target과 template를 연결해 돔을 생성합니다.
 - `connectChild()`: 생성된 돔을 가져와 자식 컴포넌트와 연결합니다. (mounted메소드 내부에서 실행)
+- `render()`: target과 template를 연결해 돔을 생성합니다.
 - `setEvent()`: 생성된 돔에 이벤트를 거는 로직을 실행합니다.
-- `addEventToTarget()`: 연결된 target돔에 이벤트를 위임합니다. (setEvent메소드 내부에서 실행)
 - `childUpdate()`: 상태 변경 시 일부 자식 컴포넌트만 업데이트(setState) 하는 로직을 작성합니다.
 - `checkNeedRender()`: 이전 상태와 새로운 상태를 비교해 상태 변경 및 리렌더링이 필요한 지 판단합니다.(setState 메소드 내부에서 실행)
 - `setState()`: 상태 변경 후 컴포넌트를 업데이트 합니다. 두번째 인자로 true가 들어갈 경우 childUpdate메소드 실행, 들어가지 않은 경우 render메소드를 실행합니다.
