@@ -18,9 +18,7 @@
 - 트랜스파일: `Babel`
 - 포맷팅&린팅: `EsLint`, `Prettier`
 
-
 </br>
-
 
 ## 2. 폴더 구조
 ```
@@ -245,7 +243,7 @@ export default class Component {
 
 </br>
 
-### 3-4. 예외
+### 3-5. 예외
 
 1. input의 value값을 상태로 업데이트 해야할 때
    - keyup이벤트를 이용해 value가져와 상태에 업데이트 할 때 setState실행이 아닌 this.state를 직접 변경해야 합니다.
