@@ -1,5 +1,7 @@
 # Vanilla_JS_Webapp_Boilerplate
 
+</br>
+
 ## 0. 실행 방법
 - 터미널에서 `yarn install`을 입력해 패키지를 설치합니다.
 - 이후에 `yarn start`를 입력해 app을 실행시킵니다.
@@ -16,6 +18,8 @@
 - 트랜스파일: `Babel`
 - 포맷팅&린팅: `EsLint`, `Prettier`
 
+
+</br>
 
 
 ## 2. 폴더 구조
