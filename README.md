@@ -1,4 +1,8 @@
-# Vanilla_JS_Component_Template
+# Vanilla_JS_Webapp_Boilerplate
+
+## 0. 실행 방법
+- 터미널에서 `yarn install`을 입력해 패키지를 설치합니다.
+- 이후에 `yarn start`를 입력해 app을 실행시킵니다.
 
 ## 1. 폴더 구조
 ```
