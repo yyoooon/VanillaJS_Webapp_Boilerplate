@@ -55,6 +55,27 @@
 </br>
 
 ## 3. 베이스 컴포넌트 구성
+
+</br>
+
+****사용법****
+
+모든 컴포넌트는 베이스컴포넌트를 확장시켜 생성합니다.
+
+```js
+import Component from 'src/components/base/Component.js';
+
+class Input extends Component {
+ ...
+}
+
+export default Input;
+```
+
+</br>
+
+****구성 요소****
+
 ```js
 export default class Component {
   $node
