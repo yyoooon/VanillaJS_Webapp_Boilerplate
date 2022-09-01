@@ -4,6 +4,20 @@
 - 터미널에서 `yarn install`을 입력해 패키지를 설치합니다.
 - 이후에 `yarn start`를 입력해 app을 실행시킵니다.
 
+</br>
+
+## 1. 기술 스택
+
+- 언어: `Js`
+- 스타일: `Scss`
+- 서버통신: `Fetch`
+- 라우팅: `HistoryApi`
+- 번들링: `Webpack5`
+- 트랜스파일: `Babel`
+- 포맷팅&린팅: `EsLint`, `Prettier`
+
+
+
 ## 1. 폴더 구조
 ```
 📦Vanilla_JS_Template
