@@ -1,4 +1,5 @@
 export default class Component {
+  $node
   $target
   props
   state
@@ -32,7 +33,12 @@ export default class Component {
   }
 
   render() {
-    this.$target.innerHTML = this.template();
+    if (this.$node) {
+      this.$node.innerHTML = this.template();
+      this.$target.appendChild(this.$node);
+    } else {
+      this.$target.innerHTML = this.template();
+    }
     this.mounted();
   }
 
