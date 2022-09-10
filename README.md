@@ -1,5 +1,7 @@
 # Vanilla_JS_Webapp_Boilerplate
 
+바닐라js+클래스로 구현된 컴포넌트를 이용해 SPA를 개발할 수 있는 보일러 플레이트 입니다.
+
 </br>
 
 ## 0. 실행 방법
